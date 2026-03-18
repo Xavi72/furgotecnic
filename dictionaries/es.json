@@ -1,5 +1,46 @@
 {
     "homepage": {
-        "title": "Inicio"
+        "title": "Inicio",
+        "preparation": {
+            "title": "Preparación",
+            "items": [
+                {
+                    "title": "Seguridad",
+                    "content": [
+                        "Cerraduras de seguridad",
+                        "Sistemas de bloqueo invisibles",
+                        "Alarmas",
+                        "Localizadores GPS"
+                    ]
+                },
+                {
+                    "title": "Protección interior",
+                    "content": [
+                        "Panelados madera, PVC o aluminio",
+                        "Suelos antidelizantes",
+                        "Rejillas para ventanas",
+                        "Pinturas antiadherentes"
+                    ]
+                },
+                {
+                    "title": "Sujeción de carga",
+                    "content": [
+                        "Barras & vigas de carga",
+                        "Railes E-trac o Aero",
+                        "Estantes de almacenamiento",
+                        "Bacas & barras de techo"
+                    ]
+                },
+                {
+                    "title": "Equipamiento modular",
+                    "content": [
+                        "Estanterías a medida",
+                        "Bancos de trabajo",
+                        "Cajones de suelo",
+                        "Suministro de electricidad"
+                    ]
+                }
+            ]
+        }
     }
 }
