@@ -10,12 +10,12 @@ export default function HomepageHero({ dict }: { dict: any }) {
   );
 
   // change slide every 2 seconds
-  /*   useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === "slide_1" ? "slide_2" : "slide_1"));
     }, 6000);
     return () => clearInterval(interval);
-  }, []); */
+  }, []);
 
   return (
     <div id="hero" className="flex flex-col w-full h-auto relative">
@@ -25,16 +25,16 @@ export default function HomepageHero({ dict }: { dict: any }) {
       >
         <div className="flex flex-col w-full h-[400px] lg:h-[600px] relative">
           <img
-            src="/assets/images/interior_wood_large.webp"
-            alt="Hero image Furgotecnic"
+            src={dict.homepage.hero.slide_1.img}
+            alt={dict.homepage.hero.slide_1.img_alt}
             className="flex w-full h-full min-h-[400px] object-cover object-top"
           />
           <div className="absolute bottom-0 left-0 right-0 flex flex-col w-full h-full min-h-[200px] justify-center items-center">
-            <h1 className="text-2xl md:text-4xl font-bold text-white text-center">
-              Soluciones profesionales para
+            <h1 className="text-2xl md:text-6xl font-bold text-white text-center">
+              {dict.homepage.hero.slide_1.title[0]}
             </h1>
             <h1 className="text-2xl md:text-4xl font-bold text-white text-center ">
-              vehículos de profesionales
+              {dict.homepage.hero.slide_1.title[1]}
             </h1>
           </div>
           <div className="absolute bottom-4 flex w-full h-auto justify-center gap-4 z-20">
@@ -52,19 +52,19 @@ export default function HomepageHero({ dict }: { dict: any }) {
           <div className="flex flex-col w-full h-36 bg-gray-900/10 rounded-sm overflow-hidden relative transition-transform duration-300 cursor-pointer active:scale-95">
             <div className="flex w-full h-full justify-center relative">
               <img
-                src="/assets/images/ufo_2.png"
-                alt="UFO"
+                src={dict.homepage.hero.slide_1.add_1.img}
+                alt={dict.homepage.hero.slide_1.add_1.img_alt}
                 className="w-full h-full object-cover grayscale"
               />
               <div className="absolute top-0 left-0 flex flex-col w-full h-full justify-center items-center px-4">
                 <p className="flex w-auto px-2 items-center text-center text-base sm:text-xl text-black font-bold text-shadow-xs text-shadow-white/0 backdrop-blur-sm">
-                  Protección antirrobo
+                  {dict.homepage.hero.slide_1.add_1.title}
                 </p>
                 <p className="flex w-auto items-center text-center text-xl sm:text-3xl text-primary font-black text-shadow-xs text-shadow-black/0 backdrop-blur-[2px] ">
-                  A partir de 249,00€
+                  {dict.homepage.hero.slide_1.add_1.price}
                 </p>
                 <p className="flex w-auto items-center text-center text-[10px] sm:text-xs text-white font-bold backdrop-blur-[6px] ">
-                  + IVA - montaje incluido
+                  {dict.homepage.hero.slide_1.add_1.price_comment}
                 </p>
               </div>
             </div>
@@ -73,27 +73,26 @@ export default function HomepageHero({ dict }: { dict: any }) {
             <div className="flex flex-row w-full h-full justify-around px-4 gap-4">
               <div className="flex flex-col w-auto min-w-[150px] shrink-0 h-auto justify-center ">
                 <p className="flex w-auto text-center text-base sm:text-xl text-black font-bold text-shadow-xs text-shadow-white/0 backdrop-blur-sm">
-                  Pack Mensajeria
+                  {dict.homepage.hero.slide_1.add_2.title}
                 </p>
-                <div className="flex flex-row w-auto h-auto ml-4 gap-2 items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <p className="text-sm text-secondary">Rotulación</p>
-                </div>
-                <div className="flex flex-row w-auto h-auto ml-4 gap-2 items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <p className="text-sm text-secondary">Protección interior</p>
-                </div>
-                <div className="flex flex-row w-auto h-auto ml-4 gap-2 items-center">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                  <p className="text-sm text-secondary">Protección antirrobo</p>
-                </div>
+                {dict.homepage.hero.slide_1.add_2.items.map(
+                  (item: string, index: number) => (
+                    <div
+                      key={index}
+                      className="flex flex-row w-auto h-auto ml-4 gap-2 items-center"
+                    >
+                      <div className="w-2 h-2 bg-primary rounded-full" />
+                      <p className="text-sm text-secondary">{item}</p>
+                    </div>
+                  ),
+                )}
               </div>
               <div className="flex flex-col w-auto h-auto justify-center items-center px-4">
                 <p className="flex w-auto items-center text-center text-xl sm:text-3xl md:text-2xl lg:text-3xl text-primary font-black text-shadow-xs text-shadow-black/0">
-                  A partir de 599,00€
+                  {dict.homepage.hero.slide_1.add_2.price}
                 </p>
                 <p className="flex w-auto text-center text-[10px] sm:text-xs text-black font-bold">
-                  + IVA - montaje incluido
+                  {dict.homepage.hero.slide_1.add_2.price_comment}
                 </p>
               </div>
             </div>
@@ -107,16 +106,16 @@ export default function HomepageHero({ dict }: { dict: any }) {
       >
         <div className="flex flex-col w-full h-[400px] lg:h-[600px] relative">
           <img
-            src="/assets/images/camper.webp"
-            alt="Hero image camper Furgotecnic"
+            src={dict.homepage.hero.slide_2.img}
+            alt={dict.homepage.hero.slide_2.img_alt}
             className="flex w-full h-full min-h-[400px] object-cover object-center grayscale"
           />
           <div className="absolute bottom-0 left-0 right-0 flex flex-col w-full h-full min-h-[200px] justify-center items-center">
-            <h1 className="text-2xl md:text-4xl font-bold text-white text-center">
-              Transformaciones para
+            <h1 className="text-2xl md:text-6xl font-bold text-white text-center">
+              {dict.homepage.hero.slide_2.title[0]}
             </h1>
             <h1 className="text-2xl md:text-4xl font-bold text-white text-center ">
-              viajeros exigentes
+              {dict.homepage.hero.slide_2.title[1]}
             </h1>
           </div>
           <div className="absolute bottom-4 flex w-full h-auto justify-center gap-4 z-20">
@@ -131,24 +130,25 @@ export default function HomepageHero({ dict }: { dict: any }) {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 w-full max-w-[1280px] h-auto p-4 gap-4 z-0">
-          <div className="flex flex-col w-full h-36 bg-gray-900/10 rounded-sm overflow-hidden relative transition-transform duration-300 cursor-pointer active:scale-95">
-            <div className="flex w-full h-full justify-center relative">
+          <div className="flex flex-row w-full h-36 justify-between gap-4 rounded-sm overflow-hidden relative transition-transform duration-300 cursor-pointer active:scale-95">
+            <div className="flex flex-col w-auto  h-auto pl-4 sm:pl-8 justify-center bg-gradient-to-r from-gray-900/10 to-transparent ">
+              <p className="flex w-auto text-center text-base sm:text-xl text-black font-bold text-shadow-xs text-shadow-white/0 backdrop-blur-sm">
+                {dict.homepage.hero.slide_2.add_1.title}
+              </p>
+
+              <p className="flex w-auto items-start text-left text-xl sm:text-3xl md:text-2xl lg:text-3xl text-primary font-black text-shadow-xs text-shadow-black/0">
+                {dict.homepage.hero.slide_2.add_1.price}
+              </p>
+              <p className="flex w-auto text-left text-[10px] sm:text-xs text-black font-bold">
+                {dict.homepage.hero.slide_2.add_1.price_comment}
+              </p>
+            </div>
+            <div className="flex w-auto h-full justify-end relative pr-0 lg:pr-8 overflow-hidden">
               <img
-                src="/assets/images/ufo_2.png"
-                alt="UFO"
-                className="w-full h-full object-cover grayscale"
+                src={dict.homepage.hero.slide_2.add_1.img}
+                alt={dict.homepage.hero.slide_2.add_1.img_alt}
+                className="w-full h-full object-contain grayscale"
               />
-              <div className="absolute top-0 left-0 flex flex-col w-full h-full justify-center items-center px-4">
-                <p className="flex w-auto px-2 items-center text-center text-base sm:text-xl text-black font-bold text-shadow-xs text-shadow-white/0 backdrop-blur-sm">
-                  Protección antirrobo
-                </p>
-                <p className="flex w-auto items-center text-center text-xl sm:text-3xl text-primary font-black text-shadow-xs text-shadow-black/0 backdrop-blur-[2px] ">
-                  A partir de 249,00€
-                </p>
-                <p className="flex w-auto items-center text-center text-[10px] sm:text-xs text-white font-bold backdrop-blur-[6px] ">
-                  + IVA - montaje incluido
-                </p>
-              </div>
             </div>
           </div>
           <div className="flex flex-col w-full h-36 bg-gray-900/10 rounded-sm cursor-pointer active:scale-95">
@@ -171,15 +171,15 @@ export default function HomepageHero({ dict }: { dict: any }) {
                 </div>
                 <div className="flex flex-row w-auto h-auto ml-4 gap-2 items-center">
                   <div className="w-2 h-2 bg-primary rounded-full" />
-                  <p className="text-sm text-secondary">Homologable</p>
+                  <p className="text-sm text-secondary">Sin homologación</p>
                 </div>
               </div>
               <div className="flex flex-col w-auto h-auto justify-center items-center px-4">
                 <p className="flex w-auto items-center text-center text-xl sm:text-3xl md:text-2xl lg:text-3xl text-primary font-black text-shadow-xs text-shadow-black/0">
-                  A partir de 649,00€
+                  A partir de 749,00€
                 </p>
                 <p className="flex w-auto text-center text-[10px] sm:text-xs text-black font-bold">
-                  + IVA - montaje incluido
+                  IVA & montaje incluidos
                 </p>
               </div>
             </div>
