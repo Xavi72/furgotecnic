@@ -108,10 +108,10 @@ export default function Header() {
   console.log("isDropdownOpen", isDropdownOpen);
   return (
     <div className="fixed flex flex-col w-full h-auto z-50 ">
-      <div className="flex w-full h-auto min-h-12 bg-tertiary justify-center items-center">
+      <div className="flex w-full h-12 bg-tertiary justify-center items-center">
         <div className="flex w-full h-full justify-between items-center px-[2%] py-2 gap-10">
           <div className="flex flex-wrap text-white text-xs text-pretty">
-            Equipament per a furgonetes & muntatge d&apos;accessoris en Sabadell
+            Equipament i accessoris per a furgonetes en Sabadell
           </div>
           <div className="flex items-center gap-8">
             <div className="text-white text-sm hover:text-primary cursor-pointer active:scale-95 transition-transform">
@@ -121,7 +121,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="flex w-full h-auto py-3 bg-primary justify-center items-center px-[2%]">
+      <div className="flex w-full h-[44px] py-3 bg-primary justify-center items-center px-[2%]">
         <div className="text-white text-xs md:text-sm font-normal text-center text-pretty">
           Promocions per obertura nou local del 1 al 30 de juny 2026:{" "}
           <span className="font-bold">
@@ -222,10 +222,10 @@ export default function Header() {
                     {link.name}
                   </span>
                   <div
-                    className={`flex w-[2px] h-6 mx-2 lg:mx-4 ${
+                    className={`flex w-[1px] h-6 mx-2 lg:mx-4 ${
                       index === dropdownData?.subLinks?.length - 1
                         ? ""
-                        : "bg-tertiary/50"
+                        : "bg-white/50"
                     } rounded-xs`}
                   ></div>
                 </Link>
